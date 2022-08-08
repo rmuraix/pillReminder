@@ -1,0 +1,7 @@
+.git/
+.github/
+.deepsource.toml
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+README.md
+renovate.json
