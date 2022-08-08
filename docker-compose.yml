@@ -1,0 +1,8 @@
+version: '2'
+services:
+  gas-build:
+    build: .
+    container_name: 'gas-build'
+    tty: true
+    volumes:
+      - "../app:/opt/app"

@@ -1,11 +1,10 @@
-FROM node:16.16.0-alpine3.16
+FROM node:16.16.0-buster-slim
 ENV NODE_ENV production
+
+COPY . .
 
 WORKDIR /app
 
-RUN apk add --no-cache tini=0.19.0-r0 
-ENTRYPOINT ["/sbin/tini", "--"]
-
-COPY --chown=node:node . .
+RUN npm i @google/clasp -g
 
 USER node
