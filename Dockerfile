@@ -3,7 +3,7 @@ ENV NODE_ENV production
 
 WORKDIR /app
 
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini=0.19.0-r0 
 ENTRYPOINT ["/sbin/tini", "--"]
 
 COPY --chown=node:node . .
