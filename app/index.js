@@ -1,6 +1,6 @@
 function make_record_card() {
   const contents = "WIP";
-    return contents;
+  return contents;
 }
 
 function doPost(e) {
