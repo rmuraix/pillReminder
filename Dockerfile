@@ -5,6 +5,6 @@ COPY . .
 
 WORKDIR /app
 
-RUN npm i @google/clasp -g
+RUN npm install @google/clasp@2.3.1 -g
 
 USER node
