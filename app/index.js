@@ -1,5 +1,5 @@
 function make_record_card() {
-    const contents = 'WIP';
+  const contents = "WIP";
 }
 
 function doPost(e) {
