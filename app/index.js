@@ -1,3 +1,7 @@
+function make_record_card() {
+    const contents = 'WIP';
+}
+
 function doPost(e) {
   const json = JSON.parse(e.postData.contents);
   const reply_token = json.events[0].replyToken; // get replyToken
@@ -17,5 +21,3 @@ function doPost(e) {
 
   reply(reply_token, reply_contents);
 }
-
-function make_record_card() {}
