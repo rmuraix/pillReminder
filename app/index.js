@@ -7,7 +7,7 @@ function doPost(e) {
   const reply_token = json.events[0].replyToken; // get replyToken
   const event_type = json.events[0].type; // get event type
 
-  let reply_contents;
+  let reply_contents = "";
 
   try {
     if (event_type === "postback") {
