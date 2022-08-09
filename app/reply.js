@@ -1,3 +1,1 @@
-function reply(reply_token, reply_contents){
-
-}
+function reply(reply_token, reply_contents) {}
