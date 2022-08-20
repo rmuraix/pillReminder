@@ -8,6 +8,7 @@ function make_record_card() {
   const i1 = sheet.getRange("I1"); // Start of menstruation
 
   let menstruation_days = '';
+  const nowDate = new Date();
   if (i1.isBlank() === false){
     const i1Value = i1.getValue();
     const seiriStartDate = new Date(i1Value);
@@ -16,9 +17,9 @@ function make_record_card() {
   }else{
     menstruation_days = '登録なし'
   }
-  const nowyesr = new Date().getFullYear();
-  const nowmonth = new Date().getMonth() + 1;
-  const nowday = new Date().getDate();
+  const nowyesr = nowDate.getFullYear();
+  const nowmonth = nowDate.getMonth() + 1;
+  const nowday = nowDate.getDate();
   const postDate = `${nowyesr}-${nowmonth}-${nowday}`;
 
   const start_date = new Date('2022-01-30');
