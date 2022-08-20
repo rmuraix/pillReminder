@@ -35,7 +35,7 @@ function make_record_card() {
   let progress = 0; // Number of days elapsed per sheet of pills
 
   if (diff >= 29) {
-    progress = (diff % (28 * Math.floor(days / 28))) + 1; // Number of days elapsed since the break(28)
+    progress = (diff % (28 * Math.floor(diff / 28))) + 1; // Number of days elapsed since the break(28)
   } else {
     progress = diff;
   }
