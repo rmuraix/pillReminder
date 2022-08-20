@@ -1,4 +1,21 @@
 function make_record_card() {
+  deleteTrigger(); // delete GAS trigger
+
+  const sheet_id = PropertiesService.getScriptProperties().getProperty("sheet_id"); // get sheet_id
+  const sheet = SpreadsheetApp.openById(sheet_id);
+
+  input_pill_status(sheet); // input pill status to sheet
+  const i1 = sheet.getRange("I1"); // Start of menstruation
+
+  let menstruation_days = '';
+  if (i1.isBlank() === false){
+    const i1Value = i1.getValue();
+    const seiriStartDate = new Date(i1Value);
+    const seiriDays = Math.floor((nowDate.getTime() - seiriStartDate.getTime()) / (1000 * 60 * 60 * 24) + 1);
+    menstruation_days = '' + seiriDays + '日目';
+  }else{
+    menstruation_days = '登録なし'
+  }
   const nowyesr = new Date().getFullYear();
   const nowmonth = new Date().getMonth() + 1;
   const nowday = new Date().getDate();
@@ -34,8 +51,8 @@ function make_record_card() {
 
   const private_message = demand_pill(); // Private message to be sent to the user
 
-  const postData = card_json(postDate, pill_color, progress, private_message); // Make a card JSON
-
+  const reply_contents = card_json(postDate, menstruation_days, diff, pill_color, progress, private_message); // Make a card JSON
+  return reply_contents;
 }
 
 function doPost(e) {
