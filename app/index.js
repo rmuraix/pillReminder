@@ -16,7 +16,7 @@ function make_record_card() {
     const seiriDays = Math.floor(
       (nowDate.getTime() - seiriStartDate.getTime()) / (1000 * 60 * 60 * 24) + 1
     );
-    menstruation_days = "" + seiriDays + "日目";
+    menstruation_days = String(seiriDays) + "日目";
   } else {
     menstruation_days = "登録なし";
   }
