@@ -1,0 +1,22 @@
+{
+  "name": "medicinereminder",
+  "version": "1.0.0",
+  "description": "LINE BOT with Google Apps Script",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmuraix/medicineReminder.git"
+  },
+  "author": "Ryota Murai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmuraix/medicineReminder/issues"
+  },
+  "homepage": "https://github.com/rmuraix/medicineReminder#readme",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.53"
+  }
+}
