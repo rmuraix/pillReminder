@@ -1,4 +1,4 @@
-FROM node:16.18.1-buster-slim
+FROM node:19.0.1-buster-slim
 ENV NODE_ENV production
 
 COPY . .
