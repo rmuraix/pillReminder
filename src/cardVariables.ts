@@ -10,14 +10,14 @@ function createCardVariables(): [string, number, string, string] {
   if (!i1Value) {
     daysPassed = "登録無し";
   } else {
-    const menstruationDays: number = dateDiff(new Date(i1Value), nowDate);
+    const menstruationDays: number = dateDiff(new Date(i1Value), nowDate) + 1;
     daysPassed = "" + menstruationDays + "日目";
   }
 
   // Start date of taking the pill
   const pillStartDate: string =
     PropertiesService.getScriptProperties().getProperty("PILL_STRAT") || "";
-  const diffDays: number = dateDiff(new Date(pillStartDate), nowDate);
+  const diffDays: number = dateDiff(new Date(pillStartDate), nowDate) + 1;
 
   // Calculate how many days in a term
   const progressDay: number = calcProgressDay(diffDays);
