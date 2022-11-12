@@ -1,8 +1,6 @@
 // Return the date difference
 function dateDiff(start: Date, end: Date): number {
-  return Math.floor(
-    (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)
-  );
+  return Math.floor((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
 }
 
 function calcPillColor(days: number): string {
@@ -33,4 +31,4 @@ function calcProgressDay(diff: number): number {
   return progressDay;
 }
 
-module.exports = {dateDiff, calcPillColor, calcProgressDay};
+module.exports = { dateDiff, calcPillColor, calcProgressDay };
