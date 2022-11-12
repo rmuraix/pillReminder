@@ -3,3 +3,5 @@ node_modules
 
 # for private messages
 private.js
+
+dist/
