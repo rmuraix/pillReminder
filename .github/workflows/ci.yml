@@ -1,0 +1,28 @@
+name: CI
+on: 
+  push:
+    tags: [v*]
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+      - name: Run test
+        run: |
+          npm ci
+          npm t
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.1
+        with: 
+          files: coverage/cobertura-coverage.xml
+          flags: unittests
+          fail_ci_if_error: true
